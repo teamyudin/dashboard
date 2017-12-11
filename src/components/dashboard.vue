@@ -11,7 +11,6 @@
                 <el-button type="primary">
                     John Doe <i class="el-icon-arrow-down el-icon--right"></i>
                   </el-button>
-
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item >Profile</el-dropdown-item>
                   <el-dropdown-item divided>Log Out</el-dropdown-item>
