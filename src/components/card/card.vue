@@ -22,7 +22,7 @@ export default {
     config: {
       type: Object,
       default: () => ({
-        headerBackgroundColor: '#46b567'
+        headerBackgroundColor: '#78ca4e'
       })
     }
   }
@@ -49,7 +49,7 @@ export default {
   }
 
 .el-card .el-card__header{
-  background-color: #67c23a;
+  background-color: #78ca4e;
   color: white
 }
 

@@ -1,6 +1,6 @@
 <template>
     <el-container>
-      <el-header style="background-color: #80bfff">
+      <el-header style="background-color: #66b0ff">
         <el-row style="margin-top:10px">
           <el-col :span="4">
             <img src="../assets/fakery.png" style="height: 40px;">
@@ -21,18 +21,15 @@
         </el-row>
       </el-header>
 
-      <el-main style="background-color:#e6f2ff">
+      <el-main style="background-color:#ffffff">
 
         <el-row :gutter="20">
           <el-col :span="12">
                 <el-row>
-                  <el-col>Gloria Hodge</el-col>
+                  <el-col style="font-size: 30px; font-family: Open Sans Bold">Gloria Hodge</el-col>
                 </el-row>
                 <el-row>
-                  <el-col>SSN# 345-44-9988</el-col>
-                </el-row>
-                <el-row>
-                  <el-col>Customer since: 12/26/1979</el-col>
+                  <el-col>SSN 345-44-9988</el-col>
                 </el-row>
                 <el-row>
                   <el-col><el-tag type="danger">High Risk</el-tag></el-col>
@@ -196,6 +193,7 @@
         </el-row>
 
       </el-main>
+
     </el-container>
 
 </template>
