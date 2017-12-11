@@ -49,7 +49,7 @@ export default {
   }
 
 .el-card .el-card__header{
-  background-color: #46b567;
+  background-color: #67c23a;
   color: white
 }
 

@@ -1,11 +1,28 @@
 <template>
-  <div>
     <el-container>
-      <el-header style="line-height: 60px; text-align: center; background-color: #B4BCCC">
-        header stuff here
+      <el-header style="background-color: #80bfff">
+        <el-row style="margin-top:10px">
+          <el-col :span="4">
+            <img src="../assets/fakery.png" style="height: 40px;">
+          </el-col>
+          <el-col :span="20">
+            <div style="float:right;">
+              <el-dropdown>
+                <el-button type="primary">
+                    John Doe <i class="el-icon-arrow-down el-icon--right"></i>
+                  </el-button>
+
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item >Profile</el-dropdown-item>
+                  <el-dropdown-item divided>Log Out</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </el-col>
+        </el-row>
       </el-header>
 
-      <el-main style="background-color:#EDF2FC">
+      <el-main style="background-color:#e6f2ff">
 
         <el-row :gutter="20">
           <el-col :span="12">
@@ -40,8 +57,8 @@
 
                 <el-row>
                   <el-steps :active="1" align-center>
-                    <el-step title="Onboarding" description="Onboarded on 1/1/2017" icon="el-icon-view"></el-step>
-                    <el-step title="90 Day/Tolerence" description="90 Day/Tolerence" icon="fa fa-clock-o"></i>"></el-step>
+                    <el-step title="Onboarding" description="Onboarded on 1/1/2017" icon="fa fa-university"></el-step>
+                    <el-step title="90 Day/Tolerence" description="90 Day/Tolerence" icon="fa fa-calendar"></i>"></el-step>
                     <el-step title="Periodic" icon="fa fa-clock-o"></el-step>
                   </el-steps>
                 </el-row>
@@ -182,8 +199,6 @@
       </el-main>
     </el-container>
 
-  </div>
-
 </template>
 
 <script>
@@ -220,6 +235,10 @@ export default {
 </script>
 
 <style>
+
+html * {
+  font-family: "Open Sans Semibold"
+}
 
 .fa{
       font-size: 25px
