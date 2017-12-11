@@ -5,7 +5,10 @@
           <el-col :span="4">
             <img src="../assets/fakery.png" style="height: 40px;">
           </el-col>
-          <el-col :span="20">
+          <el-col :span="4">
+            <el-input prefix-icon="el-icon-search" placeholder="Search something"/>
+          </el-col>
+          <el-col :span="16">
             <div style="float:right;">
               <el-dropdown>
                 <el-button type="primary">
