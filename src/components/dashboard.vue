@@ -1,28 +1,6 @@
 <template>
     <el-container>
-      <el-header style="background-color: #66b0ff">
-        <el-row style="margin-top:10px">
-          <el-col :span="4">
-            <img src="../assets/fakery.png" style="height: 40px;">
-          </el-col>
-          <el-col :span="4">
-            <el-input prefix-icon="el-icon-search" placeholder="Search something"/>
-          </el-col>
-          <el-col :span="16">
-            <div style="float:right;">
-              <el-dropdown>
-                <el-button type="primary">
-                    John Doe <i class="el-icon-arrow-down el-icon--right"></i>
-                  </el-button>
-                <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item >Profile</el-dropdown-item>
-                  <el-dropdown-item divided>Log Out</el-dropdown-item>
-                </el-dropdown-menu>
-              </el-dropdown>
-            </div>
-          </el-col>
-        </el-row>
-      </el-header>
+
 
       <el-main style="background-color:#ffffff">
 
@@ -202,8 +180,7 @@
 </template>
 
 <script>
-
-import card from './card/card.vue'
+import card from './card/card.vue';
 
 export default {
   name: 'dashboard',
@@ -213,25 +190,25 @@ export default {
       fileList: [
         {name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'},
         {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
-    }
+    };
   },
 
   methods: {
     handleRemove (file, fileList) {
-      console.log(file, fileList)
+      console.log(file, fileList);
     },
     handlePreview (file) {
-      console.log(file)
+      console.log(file);
     },
     handleExceed (files, fileList) {
-      this.$message.warning(`The limit is 3, you selected ${files.length} files this time, add up to ${files.length + fileList.length} totally`)
+      this.$message.warning(`The limit is 3, you selected ${files.length} files this time, add up to ${files.length + fileList.length} totally`);
     }
   },
 
   components: {
     card
   }
-}
+};
 </script>
 
 <style>

@@ -1,0 +1,15 @@
+$colors: (
+  'none': rgba(0, 0, 0, 0),
+  'green': #00c292,
+  'blue': #03a9f3,
+  'yellow': #fec107,
+  'salmon': #fb9678,
+  'black': #303133,
+  'dark-grey': #DCDFE6,
+  'navy': rgb(79, 84, 103),
+  'teal': rgb(1, 192, 200)
+);
+
+@function get-color($name) {
+  @return map-get($colors, $name);
+}

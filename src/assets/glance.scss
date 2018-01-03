@@ -1,0 +1,55 @@
+@import "colors";
+$color: get-color("blue") !default;
+
+.glance {
+  min-width: 320px;
+  box-shadow: none;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  .el-card__header {
+    background-color: initial;
+    border-color: initial;
+    background-color: $color;
+    border-color: $color;
+    padding: 12px 20px;
+  }
+
+  .header {
+    vertical-align: middle;
+    display: block;
+    clear: both;
+    font-size: 1.7rem;
+    font-weight: 400;
+    font-family: "Lato";
+    font-style: normal;
+    line-height: 1.125;
+    border-color: $color;
+
+    .title {
+      display: inline-block;
+      left: 0;
+    }
+
+    .expander {
+      top: 1px;
+      float: right;
+      font-size: 0.5em;
+      transition: transform .1s ease-out;
+      &:hover { transform: scale(1.25); }
+    }
+  }
+
+  .header, .title, .expander {
+    color: white;
+    position: relative;
+  }
+
+  .glance-container {
+    color: #4a4a4a;
+  }
+}
