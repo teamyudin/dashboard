@@ -1,6 +1,6 @@
 <template>
   <div id="glance-board">
-    <glance container-id="glance-board" class="questionnaire">
+    <glance container-id="glance-board" class="questionnaire" :animation-speed="250">
       <div slot="title"><div>Questionnaire</div></div>
       <div slot="summary">
         Summary
@@ -57,16 +57,14 @@ export default {
 @import "../assets/colors";
 @import "../assets/glance";
 
-@mixin colorize-glance($class, $color) {
-  &.#{$class}
-    ::selection, .el-card__header {
-      background-color: get-color('#{$color}');
-    }
-    .el-card__header {
-      border-color: get-color('#{$color}');
-    }
+@mixin colorize-glance($color) {
+  ::selection, .el-card__header {
+    background-color: get-color('#{$color}');
+  }
+  .el-card__header {
+    border-color: get-color('#{$color}');
+  }
 }
-
 
 #glance-board {
   height: 90vh;
@@ -74,14 +72,15 @@ export default {
   background-color: hsl(0, 0%, 96%);
   padding: 1%;
   position: relative;
+
+  .glance {
+     min-height: 200px;
+     position: absolute;
+
+     &.questionnaire {
+       width: 600px;
+       @include colorize-glance(teal);
+     }
+  }
 }
-
-.glance {
-   min-height: 200px;
-   position: absolute;
-
-   @include colorize-glance(questionnaire, teal);
-}
-
-
 </style>

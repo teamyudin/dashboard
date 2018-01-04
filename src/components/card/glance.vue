@@ -7,7 +7,7 @@
       </el-button>
     </div>
     <div :class="`glance-container ${mode}`">
-      <spinner v-if="mode === modes.expanding"></spinner>
+      <spinner v-if="mode === modes.expanding" :delay="500"></spinner>
       <div v-else-if="mode === modes.expanded" class="expanded">
         <slot name="detail"/>
       </div>
@@ -20,8 +20,6 @@
 
 <script>
 import spinner from './cube-spinner.vue';
-require('web-animations-js');
-
 
 const frame = base => ({ ...base, position: 'fixed', zIndex: 1000 });
 
@@ -50,15 +48,9 @@ export default {
     }
   },
 
-  mounted () {
-    this.glance = this.getDomRect(this.$el);
-  },
-
   methods: {
     collapse () {
       this.mode = this.modes.collapsed;
-
-      let container = this.getContainer();
 
       let collapse = this.$el.animate([
         frame({ ...this.getContainer() }),
@@ -67,15 +59,16 @@ export default {
 
       collapse.onfinish = () => {
         if (this.animation) { this.animation.cancel(); }
-
         collapse.cancel();
-      }
+      };
     },
 
     expand () {
-      let container = this.getContainer();
+      this.glance = this.getDomRect(this.$el);
 
       this.mode = this.modes.expanding;
+
+      let container = this.getContainer();
 
       this.animation = this.$el.animate([
         frame({ ...this.glance, transform: 'translate(0, 0)' }),
@@ -90,7 +83,7 @@ export default {
     getDomRect (el) {
       const rect = el.getBoundingClientRect();
 
-      return ["top", "right", "bottom", "left", "height", "width"]
+      return ['top', 'right', 'bottom', 'left', 'height', 'width']
              .reduce((result, key) => Object.assign({
                [key]: `${rect[key]}px`
              }, result), {});
