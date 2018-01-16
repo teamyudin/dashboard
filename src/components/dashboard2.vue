@@ -6,30 +6,33 @@
         Summary
       </div>
       <div slot="detail">
-        <el-table
-         :data="tableData"
-         style="width: 100%">
-         <el-table-column
-           prop="date"
-           label="Date"
-           width="180">
-         </el-table-column>
-         <el-table-column
-           prop="name"
-           label="Name"
-           width="180">
-         </el-table-column>
-         <el-table-column
-           prop="address"
-           label="Address">
-         </el-table-column>
-       </el-table>
+        <vue-perfect-scrollbar :options="{ wheelSpeed: 5 }"class="scrollable-content" v-once>
+          <el-table
+           :data="tableData"
+           style="width: 100%">
+           <el-table-column
+             prop="date"
+             label="Date"
+             width="180">
+           </el-table-column>
+           <el-table-column
+             prop="name"
+             label="Name"
+             width="180">
+           </el-table-column>
+           <el-table-column
+             prop="address"
+             label="Address">
+           </el-table-column>
+          </el-table>
+         </vue-perfect-scrollbar>
       </div>
     </glance>
   </div>
 </template>
 
 <script>
+import vuePerfectScrollbar from 'vue-perfect-scrollbar';
 import glance from './card/glance.vue';
 
 export default {
@@ -48,7 +51,8 @@ export default {
   },
 
   components: {
-    glance
+    glance,
+    vuePerfectScrollbar
   }
 };
 </script>
@@ -82,5 +86,12 @@ export default {
        @include colorize-glance(teal);
      }
   }
+}
+
+.scrollable-content {
+  position: relative;
+  margin: auto;
+  height: 91vh;
+  width: 100%;
 }
 </style>
