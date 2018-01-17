@@ -1,0 +1,123 @@
+body {
+  background-color: #F9F9F9;
+}
+
+.dd-identifier-header {
+  font-family: Montserrat, sans-serif;
+  padding-left: 9px;
+  padding-top: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0;
+  color: #4C4A4C;
+  margin-bottom: 10px;
+  .dd-subheader,
+  .dd-name { padding: 0; }
+
+  .dd-name {
+    font-size: 34px;
+    font-weight: 600;
+  }
+
+  .dd-subheader { margin-left: 10px; }
+}
+
+.bamp-footer-mock {
+  height: 35px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F1F1F1;
+  border: 1px solid #ddd;
+}
+
+.breadcrumb-bamp,
+.bamp-header-mock,
+.bamp-header-bar,
+#glance-board {
+  left: 1%;
+  right: 1%;
+  position: fixed;
+}
+
+.dd-identifier-header {
+
+}
+
+#glance-board {
+  top: 177px;
+  bottom: 45px;
+}
+
+.bamp-header-mock {
+  top: 0;
+  height: 70px;
+  background-color: #F1F1F1;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  &::before {
+    content: " ";
+    background-image: url("~/src/assets/bamp-left.png");
+    height: 60px;
+    width: 100px;
+    left: 3px;
+    position: absolute;
+  }
+}
+
+.bamp-header-bar {
+  border-left: 1px solid #54658D;
+  border-right: 1px solid #54658D;
+  top: 70px;
+  height: 40px;
+  background-color: #54658D;
+  color: white;
+  font-weight: 500;
+  font-size: 22px;
+  font-family: Montserrat, sans-serif;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  &::before {
+    content: " ";
+    background-image: url("~/src/assets/ddm-icon.png");
+    width: 34px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 3px;
+  }
+
+  span {
+    position: absolute;
+    top: 7px;
+    left: 55px;
+  }
+}
+
+.breadcrumb-bamp {
+  height: 46px;
+  background-color: #F1F1F1;
+  border: 1px solid #ddd;
+  top: 120px;
+  font-family: "Open Sans";
+  font-size: 16px;
+  border-radius: 3px;
+
+  a, span {
+    position: absolute;
+    top: 11px;
+  }
+
+  span {
+    left: 125px;
+    color: #999;
+    &::before {
+      content: " > ";
+    }
+  }
+
+  a:link {
+    color: #3686A8;
+    left: 13px;
+  }
+}

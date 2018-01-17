@@ -1,10 +1,9 @@
 <template>
   <el-card class="glance">
-    <div class="header" slot="header">
-      <span class="title"><slot name="title"/></span>
-      <el-button size="small" type="text" class="expander" @click="toggle">
-        <i class="fa fa-expand"/>
-      </el-button>
+    <div class="header" slot="header" @click="toggle">
+      <div class="padder">
+        <span class="title"><slot name="title"/></span>
+      </div>
     </div>
     <div :class="`glance-container ${mode}`">
       <spinner v-if="mode === modes.expanding" :delay="500"></spinner>

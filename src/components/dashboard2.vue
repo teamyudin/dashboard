@@ -1,33 +1,48 @@
 <template>
-  <div id="glance-board">
-    <glance container-id="glance-board" class="questionnaire" :animation-speed="250">
-      <div slot="title"><div>Questionnaire</div></div>
-      <div slot="summary">
-        Summary
+  <div>
+    <div class="bamp-header-mock"/>
+    <div class="bamp-header-bar"><span>Portfolio Details</span></div>
+    <div class="breadcrumb-bamp">
+      <a href="#">Due Diligence</a>
+      <span>Detail</span>
+    </div>
+    <div id="glance-board">
+      <div class="dd-identifier-header">
+        <span class="dd-name">Dale Cooper</span>
+        <span class="dd-subheader"/>SSN 123456789</span>
       </div>
-      <div slot="detail">
-        <vue-perfect-scrollbar :options="{ wheelSpeed: 5 }"class="scrollable-content" v-once>
-          <el-table
-           :data="tableData"
-           style="width: 100%">
-           <el-table-column
-             prop="date"
-             label="Date"
-             width="180">
-           </el-table-column>
-           <el-table-column
-             prop="name"
-             label="Name"
-             width="180">
-           </el-table-column>
-           <el-table-column
-             prop="address"
-             label="Address">
-           </el-table-column>
-          </el-table>
-         </vue-perfect-scrollbar>
+      <div class="glance-row">
+
       </div>
-    </glance>
+
+      <div class="glance-row">
+        <glance container-id="glance-board" :animation-speed="300">
+          <div slot="title">Portfolio Review</div>
+        </glance>
+        <glance container-id="glance-board" :animation-speed="300">
+          <div slot="title">Accounts</div>
+        </glance>
+        <glance container-id="glance-board" :animation-speed="300">
+          <div slot="title">Customers</div>
+        </glance>
+      </div>
+
+      <div class="glance-row">
+        <glance container-id="glance-board" :animation-speed="300">
+          <div slot="title">Portfolio Questions</div>
+        </glance>
+        <glance container-id="glance-board" :animation-speed="300">
+          <div slot="title">Account Questions</div>
+        </glance>
+        <glance class="smaller" container-id="glance-board" :animation-speed="300">
+          <div slot="title">Comments</div>
+        </glance>
+        <glance class="smaller" container-id="glance-board" :animation-speed="300">
+          <div slot="title">Documents</div>
+        </glance>
+      </div>
+    </div>
+    <div class="bamp-footer-mock"/>
   </div>
 </template>
 
@@ -36,20 +51,6 @@ import vuePerfectScrollbar from 'vue-perfect-scrollbar';
 import glance from './card/glance.vue';
 
 export default {
-  data () {
-    let tableData = [];
-
-    for (let i = 0; i < 100; i++) {
-      tableData.push({
-        date: `${i}-2018`,
-        name: `${i} Mc${i}siston`,
-        address: `${i} ${i}st Street`
-      });
-    }
-
-    return { tableData };
-  },
-
   components: {
     glance,
     vuePerfectScrollbar
@@ -60,6 +61,44 @@ export default {
 <style lang="scss">
 @import "../assets/colors";
 @import "../assets/glance";
+@import "../assets/dashboard2.scss";
+
+.glance-row {
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: calc(30% - 10px);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.glance-row:last-of-type {
+  margin-bottom: 0;
+}
+
+#glance-board {
+  min-width: 1200px;
+  overflow: hidden;
+}
+
+#glance-board .glance {
+  width: calc(33% - 4px);
+  display: inline-block;
+  margin-right: 5px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+#glance-board .glance.smaller {
+  width: calc(16% + 1px);
+
+}
+
+#glance-board .glance.smaller:first-of-type {
+  margin-right: 10px;
+}
 
 @mixin colorize-glance($color) {
   ::selection, .el-card__header {
@@ -67,24 +106,6 @@ export default {
   }
   .el-card__header {
     border-color: get-color('#{$color}');
-  }
-}
-
-#glance-board {
-  height: 90vh;
-  width: auto;
-  background-color: hsl(0, 0%, 96%);
-  padding: 1%;
-  position: relative;
-
-  .glance {
-     min-height: 200px;
-     position: absolute;
-
-     &.questionnaire {
-       width: 600px;
-       @include colorize-glance(teal);
-     }
   }
 }
 

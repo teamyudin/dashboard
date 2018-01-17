@@ -2,7 +2,7 @@
 $color: get-color("blue") !default;
 
 .glance {
-  min-width: 320px;
+  min-width: 200px;
   box-shadow: none;
   border-radius: 2px;
   font-family: "Open Sans", sans-serif;
@@ -10,42 +10,54 @@ $color: get-color("blue") !default;
   -webkit-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+  border-radius: 3px;
+  height: 100%;
+  transition: border-color 0.08s linear;
+
+  &:hover {
+    border-color: #ddd;
+  }
 
   .el-card__header {
     background-color: initial;
     border-color: initial;
-    background-color: $color;
-    border-color: $color;
-    padding: 12px 20px;
+    background-color: #F9F9F9;
+    border-color: #e6e6e6;
+    padding: 0;
+    clear: both;
   }
 
   .header {
+    cursor: pointer;
+    padding: 11px 11px 10px 11px;
+    user-select: none;
     vertical-align: middle;
     display: block;
     clear: both;
-    font-size: 1.7rem;
+    font-size: 22px;
     font-weight: 400;
-    font-family: "Lato";
+    font-family: Montserrat, sans-serif;
     font-style: normal;
-    line-height: 1.125;
+    line-height: 0.65;
     border-color: $color;
 
-    .title {
-      display: inline-block;
-      left: 0;
+    &:hover {
+      .title {
+        color: #484848;
+        border-color: #484848;
+      }
     }
 
-    .expander {
-      top: 1px;
-      float: right;
-      font-size: 0.5em;
-      transition: transform .1s ease-out;
-      &:hover { transform: scale(1.25); }
+    .title {
+      transition: all .08s linear;
+      display: inline-block;
+      left: 0;
+      margin-top: 1px;
     }
   }
 
-  .header, .title, .expander {
-    color: white;
+  .header, .title {
+    color: #808080;
     position: relative;
   }
 
