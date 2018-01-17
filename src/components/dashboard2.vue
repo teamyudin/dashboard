@@ -101,7 +101,7 @@ export default {
 
 @media screen and (max-width: 1500px) {
   #glance-board .glance.smaller {
-    width: 15.5%;
+    width: 15.75%;
     min-width: 10%;
     &:last-of-type {
       position: absolute;
