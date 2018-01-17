@@ -93,7 +93,6 @@ export default {
 
 #glance-board .glance.smaller {
   width: calc(16% + 1px);
-
 }
 
 #glance-board .glance.smaller:first-of-type {
