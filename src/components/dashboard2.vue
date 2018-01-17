@@ -100,6 +100,17 @@ export default {
   margin-right: 10px;
 }
 
+@media screen and (max-width: 1500px) {
+  #glance-board .glance.smaller {
+    width: 15.5%;
+    min-width: 10%;
+    &:last-of-type {
+      position: absolute;
+      right: 2px;
+    }
+  }
+}
+
 @mixin colorize-glance($color) {
   ::selection, .el-card__header {
     background-color: get-color('#{$color}');
