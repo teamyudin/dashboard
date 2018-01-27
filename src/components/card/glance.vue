@@ -1,20 +1,18 @@
 <template>
-  <el-card class="glance">
-    <div class="header" slot="header" @click="toggle">
-      <div class="padder">
-        <span class="title"><slot name="title"/></span>
-      </div>
-    </div>
+  <div class="glance">
+    <div class="header" slot="title" @click="toggle"/>
     <div :class="`glance-container ${mode}`">
       <spinner v-if="mode === modes.expanding" :delay="500"></spinner>
+
       <div v-else-if="mode === modes.expanded" class="expanded">
         <slot name="detail"/>
       </div>
+
       <div v-else class="collapsed">
         <slot name="summary"/>
       </div>
     </div>
-  </el-card>
+  </div>
 </template>
 
 <script>

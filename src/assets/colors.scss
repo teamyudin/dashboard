@@ -2,12 +2,21 @@ $colors: (
   'none': rgba(0, 0, 0, 0),
   'green': #00c292,
   'blue': #03a9f3,
+  'tile-blue': rgb(0, 144, 217),
+  'tile-teal': rgb(10, 166, 153),
+  'tile-salmon': rgb(243, 89, 88),
+  'purble-palace': rgb(115, 95, 135),
+  'soft-black': rgb(80, 84, 88),
+  'fs-background': #F9F8F3,
+  'fs-yellow': #FFDE00,
+  'fs-nearly-black': #302F2A,
   'yellow': #fec107,
   'salmon': #fb9678,
   'black': #303133,
   'dark-grey': #DCDFE6,
   'navy': rgb(79, 84, 103),
-  'teal': rgb(1, 192, 200)
+  'teal': rgb(1, 192, 200),
+  'gray-bg': lighten(#E5E9EC, 5)
 );
 
 @function get-color($name) {

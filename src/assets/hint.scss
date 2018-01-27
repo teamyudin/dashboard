@@ -1,0 +1,70 @@
+@import "colors";
+
+$transition: color, border-color .2s ease-in-out;
+
+.hint {
+  display: inline-block;
+  margin-right: 2vw;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  vertical-align: top;
+  bottom: 0;
+  top: 0;
+  position: relative;
+  height: auto;
+  transition: $transition;
+
+  border: {
+    top: 1px solid darken(get-color('gray-bg'), 5);
+    left: 1px solid darken(get-color('gray-bg'), 5);
+    right: 1px solid darken(get-color('gray-bg'), 5);
+  }
+
+  &.standard {
+    min-width: 455px;
+  }
+
+  &.smaller {
+    min-width: calc(455px / 2);
+  }
+
+  .hint-title {
+    padding: 14px 15px 14px 10px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Roboto";
+    color: #505458;
+    .modifiers {
+      color: #ababab;
+      margin-top: 0px;
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      float: right;
+    }
+  }
+
+  .hint-body {
+    transition: $transition;
+    border-bottom: 1px solid darken(get-color('gray-bg'), 5);
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-right: 15px;
+    padding-bottom: 14px;
+    font-size: 14px;
+    color: #505458;
+  }
+
+  &:hover {
+    .hint-row, .hint-title {
+      color: darken(#505458, 80);
+    }
+
+    .hint-body {
+      border-bottom-color: darken(get-color('gray-bg'), 20);
+    }
+
+    border-color: darken(get-color('gray-bg'), 20);
+  }
+}

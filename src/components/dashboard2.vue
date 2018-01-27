@@ -6,40 +6,12 @@
       <a href="#">Due Diligence</a>
       <span>Detail</span>
     </div>
-    <div id="glance-board">
-      <div class="dd-identifier-header">
-        <span class="dd-name">Dale Cooper</span>
-        <span class="dd-subheader"/>SSN 123456789</span>
+    <div id="glance-board" class="glance-canvas">
+      <div class="glance-row">
+          <portfolio-overview/>
       </div>
       <div class="glance-row">
-
-      </div>
-
-      <div class="glance-row">
-        <glance container-id="glance-board" :animation-speed="300">
-          <div slot="title">Portfolio Review</div>
-        </glance>
-        <glance container-id="glance-board" :animation-speed="300">
-          <div slot="title">Accounts</div>
-        </glance>
-        <glance container-id="glance-board" :animation-speed="300">
-          <div slot="title">Customers</div>
-        </glance>
-      </div>
-
-      <div class="glance-row">
-        <glance container-id="glance-board" :animation-speed="300">
-          <div slot="title">Portfolio Questions</div>
-        </glance>
-        <glance container-id="glance-board" :animation-speed="300">
-          <div slot="title">Account Questions</div>
-        </glance>
-        <glance class="smaller" container-id="glance-board" :animation-speed="300">
-          <div slot="title">Comments</div>
-        </glance>
-        <glance class="smaller" container-id="glance-board" :animation-speed="300">
-          <div slot="title">Documents</div>
-        </glance>
+          <risk-rating/>
       </div>
     </div>
     <div class="bamp-footer-mock"/>
@@ -47,12 +19,14 @@
 </template>
 
 <script>
+import portfolioOverview from './hints/portfolio-overview.vue';
+import riskRating from './hints/risk-rating.vue';
 import vuePerfectScrollbar from 'vue-perfect-scrollbar';
-import glance from './card/glance.vue';
 
 export default {
   components: {
-    glance,
+    portfolioOverview,
+    riskRating,
     vuePerfectScrollbar
   }
 };
@@ -69,7 +43,7 @@ export default {
   left: 0;
   right: 0;
   height: calc(30% - 10px);
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   display: block;
 }
 
@@ -80,12 +54,17 @@ export default {
 #glance-board {
   min-width: 1200px;
   overflow: hidden;
+  top: 155px;
+  bottom: 45px;
+  padding: 9px 12px;
 }
+
 
 #glance-board .glance {
   width: calc(33% - 4px);
   display: inline-block;
   margin-right: 5px;
+
   &:last-of-type {
     margin-right: 0;
   }
@@ -93,11 +72,9 @@ export default {
 
 #glance-board .glance.smaller {
   width: calc(16% + 1px);
+  &:first-of-type { margin-right: 10px; }
 }
 
-#glance-board .glance.smaller:first-of-type {
-  margin-right: 10px;
-}
 
 @media screen and (max-width: 1500px) {
   #glance-board .glance.smaller {
